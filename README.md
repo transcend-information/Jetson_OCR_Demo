@@ -35,7 +35,7 @@ It is designed to capture live video, detect text regions, and recognize charact
 
 ## Install NVIDIA Jetson Nano OS
 
-1. Download the **Jetson Nano Developer Kit SD Card Image** from NVIDIA’s official website.
+1. Download the **Jetson Nano Developer Kit SD Card Image** from https://s3.ap-northeast-1.amazonaws.com/test.storejetcloud.com/ECM300+Image/ecm_jetpack.zip.
 2. Write the image to the target microSD card using a graphical tool such as [Balena Etcher](https://etcher.balena.io/).
 3. Once the image has been written, insert the microSD card into the Jetson’s native slot and power on the device.
 
