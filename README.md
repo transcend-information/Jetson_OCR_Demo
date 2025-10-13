@@ -155,3 +155,8 @@ Recognize text from a static image and print the results in the terminal.
 python ocr_jetson.py image_recognize -i pic.jpg
 ```
 
+Third-Party Licenses
+
+This project uses [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR), which is licensed under the Apache License 2.0.
+You may freely use PaddleOCR for research, personal, and commercial purposes, provided that you retain the original license and copyright notice.
+No modifications were made to the original PaddleOCR source code.
