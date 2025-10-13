@@ -1,6 +1,6 @@
-# Jetson_OCR_Demo
+# Transcend ECM300 / ECM100 Jetson OCR
 
-This project demonstrates real-time Optical Character Recognition (OCR) on the **NVIDIA Jetson ORIN Nano** platform, using the **Transcend ECM300** embedded camera module.
+This project demonstrates real-time Optical Character Recognition (OCR) on the **NVIDIA Jetson ORIN Nano** platform, using the **Transcend ECM300 or ECM100** embedded camera module.
 It is designed to capture live video, detect text regions, and recognize characters efficiently using the **PaddleOCR** framework.
 
 ---
@@ -23,9 +23,10 @@ It is designed to capture live video, detect text regions, and recognize charact
 
    * NVIDIA Jetson ORIN Nano
 
-2. **Supported Camera**
+2. **Supported Cameras**
 
-   * [Transcend ECM300](https://us.transcend-info.com/embedded/product/embedded-camera-modules/ecm-300)
+   * [Transcend ECM300](https://www.transcend-info.com/embedded/product/embedded-camera-modules/ecm-300)
+   * [Transcend ECM100](https://www.transcend-info.com/embedded/product/embedded-camera-modules/ecm-100)
 
 3. **Recommended SD Card**
 
@@ -41,9 +42,9 @@ It is designed to capture live video, detect text regions, and recognize charact
 
 ---
 
-## Connect the ECM300 Camera to Jetson ORIN Nano
+## Connect the ECM300 / ECM100 Camera to Jetson ORIN Nano
 
-1. Insert the ECM300 module into the **CAM1** port of the Jetson ORIN Nano.
+1. Insert the ECM300 / ECM100 module into the **CAM1** port of the Jetson ORIN Nano.
 
 2. Open a terminal and run:
 
@@ -105,7 +106,7 @@ pip uninstall opencv-python-headless
 
 ### 1. Show Live View
 
-Display live video from the ECM300 camera.
+Display live video from the ECM300 / ECM100 camera.
 Option `-o` controls image rotation:
 `0 = no rotation`, `1 = 90°`, `2 = 180°`, `3 = 270°`.
 
