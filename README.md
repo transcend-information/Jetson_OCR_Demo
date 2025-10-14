@@ -75,6 +75,9 @@ It is designed to capture live video, detect text regions, and recognize charact
 ## Set Up a Virtual Environment
 
 ```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install python3.10-venv
 python3 -m venv --system-site-packages ocr_venv
 source ocr_venv/bin/activate
 ```
