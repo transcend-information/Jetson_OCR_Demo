@@ -45,7 +45,9 @@ It is designed to capture live video, detect text regions, and recognize charact
 
 ## Connect the ECM300 / ECM100 Camera to Jetson ORIN Nano
 
-1. Insert the ECM300 / ECM100 module into the **CAM1** port of the Jetson ORIN Nano.
+1. Insert the camera module as follows:
+- For **ECM300**, insert into the **CAM1** port.
+- For **ECM100**, insert into the **CAM0** port.
 
 2. Open a terminal and run:
 
@@ -58,7 +60,8 @@ It is designed to capture live video, detect text regions, and recognize charact
 
    * “Configure Jetson 24pin CSI Connector”
    * “Configure for compatible hardware”
-   * “Camera gc2093-A”
+   * For **ECM100**, select “Camera gc2093-A”
+   * For **ECM300**, select “Camera IMX675-C”
    * “Save pin changes”
    * “Save and reboot to recognize pins”
 
