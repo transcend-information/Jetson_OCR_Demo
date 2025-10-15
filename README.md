@@ -98,6 +98,8 @@ deactivate
 
 ## Command Usage
 
+> **Note:** Please make sure the Jetson device is connected to the Internet before running the following commands.
+
 ### 1. Show Live View
 
 Display live video from the ECM300 / ECM100 camera.
