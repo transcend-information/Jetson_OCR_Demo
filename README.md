@@ -1,6 +1,6 @@
-# Transcend ECM300 / ECM100 Jetson OCR
+# Transcend ECM300 Jetson OCR
 
-This project demonstrates real-time Optical Character Recognition (OCR) on the **NVIDIA Jetson ORIN Nano** platform, using the **Transcend ECM300 or ECM100** embedded camera module.
+This project demonstrates real-time Optical Character Recognition (OCR) on the **NVIDIA Jetson ORIN Nano** platform, using the **Transcend ECM300** embedded camera module.
 It is designed to capture live video, detect text regions, and recognize characters efficiently using the **PaddleOCR** framework.
 
 ---
@@ -9,11 +9,11 @@ It is designed to capture live video, detect text regions, and recognize charact
 
 * [Hardware Requirements](#hardware-requirements)
 * [Install NVIDIA Jetson Nano OS](#install-nvidia-jetson-nano-os)
+* [Download Virtual Environment](#download-virtual-environment)
 * [Connect the ECM300 Camera](#connect-the-ecm300-camera-to-jetson-orin-nano)
 * [Set Up Virtual Environment](#set-up-a-virtual-environment)
-* [Install Required Packages](#install-required-packages)
 * [Command Usage](#command-usage)
-* [Project Information](#project-information)
+* [Third-Party Licenses](#third-party-licenses)
 
 ---
 
@@ -26,28 +26,35 @@ It is designed to capture live video, detect text regions, and recognize charact
 2. **Supported Cameras**
 
    * [Transcend ECM300](https://www.transcend-info.com/embedded/product/embedded-camera-modules/ecm-300)
-   * [Transcend ECM100](https://www.transcend-info.com/embedded/product/embedded-camera-modules/ecm-100)
 
 3. **Recommended SD Card**
 
-   * Minimum 32 GB UHS-1 microSD card
+   * A microSD card with at least **128 GB** capacity and **UHS-1** speed class.
 
 ---
 
 ## Install NVIDIA Jetson Nano OS
 
-1. Download the **Jetson Nano Developer Kit SD Card Image** from https://s3.ap-northeast-1.amazonaws.com/test.storejetcloud.com/ECM300+Image/ecm_jetpack.zip.
+1. Download the **Jetson Nano Developer Kit SD Card Image** from https://s3.ap-northeast-1.amazonaws.com/test.storejetcloud.com/ECM300+Image/ecm_jetpack.zip
 2. Write the image to the target microSD card using a graphical tool such as [Balena Etcher](https://etcher.balena.io/).
 3. Once the image has been written, insert the microSD card into the Jetson’s native slot and power on the device.
 4. The default login username and password are both “user”.
 
 ---
 
-## Connect the ECM300 / ECM100 Camera to Jetson ORIN Nano
+## Download Virtual Environment
+
+1. Download the **Virtual Environment** from https://s3.ap-northeast-1.amazonaws.com/test.storejetcloud.com/ECM300+Image/demo_venv.zip
+2. Unzip the downloaded ZIP file.
+3. Copy the extracted **demo_venv** folder to the desktop.
+
+---
+---
+
+## Connect the ECM300 Camera to Jetson ORIN Nano
 
 1. Insert the camera module as follows:
-- For **ECM300**, insert into the **CAM1** port.
-- For **ECM100**, insert into the **CAM0** port.
+- **ECM300**, insert into the **CAM1** port.
 
 2. Open a terminal and run:
 
@@ -60,8 +67,7 @@ It is designed to capture live video, detect text regions, and recognize charact
 
    * “Configure Jetson 24pin CSI Connector”
    * “Configure for compatible hardware”
-   * For **ECM100**, select “Camera gc2093-A”
-   * For **ECM300**, select “Camera IMX675-C”
+   * Select “Camera IMX675-C”
    * “Save pin changes”
    * “Save and reboot to recognize pins”
 
@@ -78,11 +84,8 @@ It is designed to capture live video, detect text regions, and recognize charact
 ## Set Up a Virtual Environment
 
 ```bash
-sudo apt update
-sudo apt upgrade -y
-sudo apt install python3.10-venv
-python3 -m venv --system-site-packages ocr_venv
-source ocr_venv/bin/activate
+cd Desktop
+source demo_venv/bin/activate
 ```
 
 To deactivate the virtual environment:
@@ -90,22 +93,6 @@ To deactivate the virtual environment:
 ```bash
 deactivate
 ```
-
----
-
-## Install Required Packages
-
-```bash
-pip install paddleocr==2.10.0
-pip install paddlepaddle==3.0.0
-pip install numpy==1.25.2
-pip install opencv-python==4.7.0.72
-pip install opencv-python-headless==4.7.0.72
-pip uninstall opencv-python
-pip uninstall opencv-python-headless
-```
-
-> 💡 *Tip:* Installing and uninstalling both OpenCV variants ensures compatibility with Jetson’s built-in libraries.
 
 ---
 
@@ -163,7 +150,7 @@ Recognize text from a static image and print the results in the terminal.
 python ocr_jetson.py image_recognize -i pic.jpg
 ```
 
-Third-Party Licenses
+## Third-Party Licenses
 
 This project uses [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR), which is licensed under the Apache License 2.0.
 You may freely use PaddleOCR for research, personal, and commercial purposes, provided that you retain the original license and copyright notice.
