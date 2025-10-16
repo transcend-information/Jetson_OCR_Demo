@@ -3,6 +3,8 @@
 This project demonstrates real-time Optical Character Recognition (OCR) on the **NVIDIA Jetson ORIN Nano** platform, using the **Transcend ECM300** embedded camera module.
 It is designed to capture live video, detect text regions, and recognize characters efficiently using the **PaddleOCR** framework.
 
+<img src="images/demo.png" width="400">
+
 ---
 
 ## Table of Contents
