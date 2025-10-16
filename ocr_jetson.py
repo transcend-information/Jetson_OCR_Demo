@@ -58,7 +58,7 @@ def load_ocr_model():
     logging.getLogger('paddle').setLevel(logging.ERROR)
     logging.getLogger('ppocr').setLevel(logging.ERROR)
     from paddleocr import PaddleOCR
-    ocr_instance = PaddleOCR(use_angle_cls=False)
+    ocr_instance = PaddleOCR(use_angle_cls=False, use_gpu=False, use_xpu=False)
     print("✅ OCR model loading completed.")
 
 def prepare_camera(flip_method=0):
@@ -421,3 +421,4 @@ def main():
     
 if __name__ == "__main__":
     main()
+
